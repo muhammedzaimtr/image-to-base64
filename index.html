@@ -40,19 +40,14 @@
 </div>
 <script type='text/javascript'>
     function encode() {
-
         var filesSelected = document.getElementById("image").files;
         if (filesSelected.length > 0) {
             var fileToLoad = filesSelected[0];
-
             var fileReader = new FileReader();
-
-            fileReader.onload = function(fileLoadedEvent) {
-                var srcData = fileLoadedEvent.target.result;
-
+            fileReader.onload = function(fileli) {
+                var data = fileli.target.result;
                 var Image2 = document.createElement('img');
-                Image2.src = srcData;
-
+                Image2.src = data;
                 document.getElementById("test").innerHTML = Image2.src;
                 console.log("200 OK");
             }
@@ -60,7 +55,6 @@
         }
     }
 </script>
-<script src="assets/js/clipboard.js"></script>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
