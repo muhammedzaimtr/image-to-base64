@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>İmage To Base64</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Muhammed Zaim(www.muhammedzaim.com)" />
+    <meta name="keywords" content="online, image, optimizer, base64, encoder, base64 encoder, image to base64, image to base64 encoder, online base 64 encoder, online image to base 64 encoder,  ">
+    <meta name="description" content="Online image optimizer and base64 encoder / Çevrimiçi görüntü iyileştirici ve base64 kodlayıcı">
+    <meta property="og:title" content="Online image optimizer and base64 encoder / Çevrimiçi görüntü iyileştirici ve base64 kodlayıcı" />
+    <meta property="og:image" content="Online image optimizer and base64 encoder / Çevrimiçi görüntü iyileştirici ve base64 kodlayıcı" />
+    <meta name="robots" content="index,follow">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="assets/css/zerocss.css">
+    <link rel="stylesheet" href="assets/css/zerogrid.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<div class="top">
+    İmage To Base64
+</div>
+<div class="container">
+    <div class="row">
+        <div class="ozelresim" style="background-color: #fff; box-shadow: 1px 1px 15px rgba(83,83,83,0.2); margin-bottom: 50px; width: 100%; min-height: 150px;">
+            <div class="fileUpload btn btn-primary">
+                <center>
+                    <span><img style="padding-top: 35px !important; width: 75px; height: 75px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjIxcHgiIHZpZXdCb3g9IjAgMCAyNCAyMSIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4gICAgICAgIDx0aXRsZT4xNDc2NjM5MzAwX3Bob3RvLTI0PC90aXRsZT4gICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+ICAgIDxkZWZzPjwvZGVmcz4gICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8ZyBpZD0iMTQ3NjYzOTMwMF9waG90by0yNCIgZmlsbD0iIzgwODA4MCI+ICAgICAgICAgICAgPGcgaWQ9IkxheWVyXzEiPiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTguMTMzLDMgTDE3LjIsMSBDMTYuOTg1LDAuNTAyIDE2LjEyNSwwIDE1LjM3NCwwIEw4Ljc1OSwwIEM4LjAwOCwwIDcuMTQ4LDAuNTAyIDYuOTMzLDEgTDYsMyBMMywzIEMwLjYxMSwzIDAsNSAwLDUgTDAsMTkgQzAsMTkgMS41LDIxIDMsMjEgTDIxLDIxIEMyMi41OTQsMjEgMjQsMTkgMjQsMTkgTDI0LDUgQzI0LDUgMjMuNDk2LDMgMjEsMyBMMTguMTMzLDMgWiBNMTIsMTguMDAxIEM4LjY4NywxOC4wMDEgNiwxNS4zMTQgNiwxMiBDNiw4LjY4NyA4LjY4Nyw2IDEyLDYgQzE1LjMxNCw2IDE4LDguNjg3IDE4LDEyIEMxOCwxNS4zMTQgMTUuMzE0LDE4LjAwMSAxMiwxOC4wMDEgTDEyLDE4LjAwMSBaIE0xMiw4IEM5Ljc5MSw4IDgsOS43OTEgOCwxMiBDOCwxNC4yMDkgOS43OTEsMTYgMTIsMTYgQzE0LjIwOSwxNiAxNiwxNC4yMDkgMTYsMTIgQzE2LDkuNzkxIDE0LjIwOSw4IDEyLDggTDEyLDggWiIgaWQ9IlNoYXBlIj48L3BhdGg+ICAgICAgICAgICAgPC9nPiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+" alt=""></span>
+                    <input onchange="encode();" id="image" style="width:100% !important; height: 100% !important;" type="file" class="upload" name="avatar" accept="image/jpg,image/png,image/jpeg,image/gif">
+                </center>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <p style="padding-bottom: 10px;">İmage To Base64</p>
+        <div class="data">
+            <p id="test"></p>
+        </div>
+    </div>
+</div>
+<script type='text/javascript'>
+    function encode() {
+
+        var filesSelected = document.getElementById("image").files;
+        if (filesSelected.length > 0) {
+            var fileToLoad = filesSelected[0];
+
+            var fileReader = new FileReader();
+
+            fileReader.onload = function(fileLoadedEvent) {
+                var srcData = fileLoadedEvent.target.result; // <--- data: base64
+
+                var Image2 = document.createElement('img');
+                Image2.src = srcData;
+
+                document.getElementById("test").innerHTML = Image2.src;
+                console.log("200 OK");
+            }
+            fileReader.readAsDataURL(fileToLoad);
+        }
+    }
+</script>
+<script src="assets/js/clipboard.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
