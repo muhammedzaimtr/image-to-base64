@@ -18,6 +18,7 @@ body{
 
 .data{
     width: 95%;
+    height: auto;
     padding: 25px;
     overflow-x: scroll;
     font-size: 16px;
@@ -35,4 +36,12 @@ body{
     cursor: pointer;
     opacity: 0;
     filter: alpha(opacity=0);
+}
+
+textarea{
+    font-size: 16px;
+    border: none;
+    resize: none;
+    width: 100%;
+    height: auto;
 }

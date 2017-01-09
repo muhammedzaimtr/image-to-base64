@@ -14,3 +14,7 @@
             fileReader.readAsDataURL(fileToLoad);
         }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master

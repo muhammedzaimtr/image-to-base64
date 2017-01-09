@@ -15,6 +15,17 @@
     <link rel="stylesheet" href="assets/css/zerocss.css">
     <link rel="stylesheet" href="assets/css/zerogrid.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <script type="text/javascript">
+        function copy() {
+            document.getElementById('test').select();
+            try {
+                document.execCommand('copy');
+                alert("Kopyalama işlemi başarılı");
+            } catch (e) {
+                alert("Kopyalama işlemi gerçekleşemedi");
+            }
+        }
+    </script>
 </head>
 <body>
 <div class="top">
@@ -34,8 +45,9 @@
     <div class="row">
         <p style="padding-bottom: 10px;">İmage To Base64</p>
         <div class="data">
-            <p id="test"></p>
+            <textarea id="test" readonly></textarea>
         </div>
+        <button onclick="copy()">Kopyala</button>
     </div>
 </div>
 <script type='text/javascript'>
